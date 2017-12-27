@@ -2,23 +2,27 @@
 <Coins>
   <Coin>
     <name>Bitcoin</name>
-    <symbol>XBT</symbol>
+    <symbol>BTC</symbol>
   </Coin>
   <Coin>
     <name>Bitcoin Cash</name>
     <symbol>BCH</symbol>
   </Coin>
   <Coin>
-    <name>Bitcoin Lite</name>
-    <symbol></symbol>
+    <name>Litecoin</name>
+    <symbol>LTC</symbol>
+  </Coin>
+  <Coin>
+    <name>Lite bitcoin</name>
+    <symbol>LBTC</symbol>
   </Coin>
   <Coin>
     <name>Bitcoin Gold</name>
-    <symbol></symbol>
+    <symbol>BTG</symbol>
   </Coin>
   <Coin>
     <name>Bitconnect</name>
-    <symbol></symbol>
+    <symbol>BCC</symbol>
   </Coin>
   <Coin>
     <name>Ethereum</name>
@@ -26,15 +30,15 @@
   </Coin>
   <Coin>
     <name>Ethereum Classic</name>
-    <symbol></symbol>
+    <symbol>ETC</symbol>
   </Coin>
   <Coin>
     <name>ZCash</name>
-    <symbol></symbol>
+    <symbol>ZEC</symbol>
   </Coin>
   <Coin>
     <name>Monero</name>
-    <symbol></symbol>
+    <symbol>XMR</symbol>
   </Coin>
   <Coin>
     <name>EOS</name>
@@ -74,10 +78,10 @@
   </Coin>
   <Coin>
     <name>NEO</name>
-    <symbol></symbol>
+    <symbol>NEO</symbol>
   </Coin>
   <Coin>
     <name>Dash</name>
-    <symbol></symbol>
+    <symbol>DASH</symbol>
   </Coin>
 </Coins>

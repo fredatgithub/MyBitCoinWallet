@@ -67,10 +67,16 @@
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControlMain = new System.Windows.Forms.TabControl();
       this.tabPageListCoin = new System.Windows.Forms.TabPage();
-      this.tabPageBitCoin = new System.Windows.Forms.TabPage();
+      this.buttonCoinListUpdate = new System.Windows.Forms.Button();
+      this.buttonCoinListAdd = new System.Windows.Forms.Button();
+      this.textBoxCoinListSymbol = new System.Windows.Forms.TextBox();
+      this.labelCoinListSymbol = new System.Windows.Forms.Label();
+      this.textBoxCoinListName = new System.Windows.Forms.TextBox();
+      this.labelCoinListName = new System.Windows.Forms.Label();
       this.listViewCoinList = new System.Windows.Forms.ListView();
       this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeaderSymbol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.tabPageBitCoin = new System.Windows.Forms.TabPage();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageListCoin.SuspendLayout();
@@ -385,6 +391,12 @@
       // 
       // tabPageListCoin
       // 
+      this.tabPageListCoin.Controls.Add(this.buttonCoinListUpdate);
+      this.tabPageListCoin.Controls.Add(this.buttonCoinListAdd);
+      this.tabPageListCoin.Controls.Add(this.textBoxCoinListSymbol);
+      this.tabPageListCoin.Controls.Add(this.labelCoinListSymbol);
+      this.tabPageListCoin.Controls.Add(this.textBoxCoinListName);
+      this.tabPageListCoin.Controls.Add(this.labelCoinListName);
       this.tabPageListCoin.Controls.Add(this.listViewCoinList);
       this.tabPageListCoin.Location = new System.Drawing.Point(4, 22);
       this.tabPageListCoin.Name = "tabPageListCoin";
@@ -393,6 +405,81 @@
       this.tabPageListCoin.TabIndex = 0;
       this.tabPageListCoin.Text = "Coin List";
       this.tabPageListCoin.UseVisualStyleBackColor = true;
+      // 
+      // buttonCoinListUpdate
+      // 
+      this.buttonCoinListUpdate.Location = new System.Drawing.Point(531, 23);
+      this.buttonCoinListUpdate.Name = "buttonCoinListUpdate";
+      this.buttonCoinListUpdate.Size = new System.Drawing.Size(75, 23);
+      this.buttonCoinListUpdate.TabIndex = 6;
+      this.buttonCoinListUpdate.Text = "Update";
+      this.buttonCoinListUpdate.UseVisualStyleBackColor = true;
+      this.buttonCoinListUpdate.Click += new System.EventHandler(this.buttonCoinListUpdate_Click);
+      // 
+      // buttonCoinListAdd
+      // 
+      this.buttonCoinListAdd.Location = new System.Drawing.Point(436, 23);
+      this.buttonCoinListAdd.Name = "buttonCoinListAdd";
+      this.buttonCoinListAdd.Size = new System.Drawing.Size(75, 23);
+      this.buttonCoinListAdd.TabIndex = 5;
+      this.buttonCoinListAdd.Text = "Add";
+      this.buttonCoinListAdd.UseVisualStyleBackColor = true;
+      this.buttonCoinListAdd.Click += new System.EventHandler(this.buttonCoinListAdd_Click);
+      // 
+      // textBoxCoinListSymbol
+      // 
+      this.textBoxCoinListSymbol.Location = new System.Drawing.Point(279, 27);
+      this.textBoxCoinListSymbol.Name = "textBoxCoinListSymbol";
+      this.textBoxCoinListSymbol.Size = new System.Drawing.Size(100, 20);
+      this.textBoxCoinListSymbol.TabIndex = 4;
+      // 
+      // labelCoinListSymbol
+      // 
+      this.labelCoinListSymbol.AutoSize = true;
+      this.labelCoinListSymbol.Location = new System.Drawing.Point(210, 30);
+      this.labelCoinListSymbol.Name = "labelCoinListSymbol";
+      this.labelCoinListSymbol.Size = new System.Drawing.Size(41, 13);
+      this.labelCoinListSymbol.TabIndex = 3;
+      this.labelCoinListSymbol.Text = "Symbol";
+      // 
+      // textBoxCoinListName
+      // 
+      this.textBoxCoinListName.Location = new System.Drawing.Point(78, 27);
+      this.textBoxCoinListName.Name = "textBoxCoinListName";
+      this.textBoxCoinListName.Size = new System.Drawing.Size(100, 20);
+      this.textBoxCoinListName.TabIndex = 2;
+      // 
+      // labelCoinListName
+      // 
+      this.labelCoinListName.AutoSize = true;
+      this.labelCoinListName.Location = new System.Drawing.Point(9, 31);
+      this.labelCoinListName.Name = "labelCoinListName";
+      this.labelCoinListName.Size = new System.Drawing.Size(35, 13);
+      this.labelCoinListName.TabIndex = 1;
+      this.labelCoinListName.Text = "Name";
+      // 
+      // listViewCoinList
+      // 
+      this.listViewCoinList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.listViewCoinList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderName,
+            this.columnHeaderSymbol});
+      this.listViewCoinList.Location = new System.Drawing.Point(8, 62);
+      this.listViewCoinList.Name = "listViewCoinList";
+      this.listViewCoinList.Size = new System.Drawing.Size(651, 291);
+      this.listViewCoinList.TabIndex = 0;
+      this.listViewCoinList.UseCompatibleStateImageBehavior = false;
+      this.listViewCoinList.SelectedIndexChanged += new System.EventHandler(this.listViewCoinList_SelectedIndexChanged);
+      // 
+      // columnHeaderName
+      // 
+      this.columnHeaderName.Text = "Name";
+      // 
+      // columnHeaderSymbol
+      // 
+      this.columnHeaderSymbol.Text = "Symbol";
       // 
       // tabPageBitCoin
       // 
@@ -404,25 +491,6 @@
       this.tabPageBitCoin.Text = "BitCoin";
       this.tabPageBitCoin.UseVisualStyleBackColor = true;
       // 
-      // listViewCoinList
-      // 
-      this.listViewCoinList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderName,
-            this.columnHeaderSymbol});
-      this.listViewCoinList.Location = new System.Drawing.Point(28, 46);
-      this.listViewCoinList.Name = "listViewCoinList";
-      this.listViewCoinList.Size = new System.Drawing.Size(603, 307);
-      this.listViewCoinList.TabIndex = 0;
-      this.listViewCoinList.UseCompatibleStateImageBehavior = false;
-      // 
-      // columnHeaderName
-      // 
-      this.columnHeaderName.Text = "Name";
-      // 
-      // columnHeaderSymbol
-      // 
-      this.columnHeaderSymbol.Text = "Symbol";
-      // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,7 +499,7 @@
       this.Controls.Add(this.tabControlMain);
       this.Controls.Add(this.menuStrip1);
       this.MainMenuStrip = this.menuStrip1;
-      this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.Margin = new System.Windows.Forms.Padding(2);
       this.Name = "FormMain";
       this.ShowIcon = false;
       this.Text = "My BitCoin wallet";
@@ -441,6 +509,7 @@
       this.menuStrip1.PerformLayout();
       this.tabControlMain.ResumeLayout(false);
       this.tabPageListCoin.ResumeLayout(false);
+      this.tabPageListCoin.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -491,5 +560,11 @@
     private System.Windows.Forms.ColumnHeader columnHeaderName;
     private System.Windows.Forms.ColumnHeader columnHeaderSymbol;
     private System.Windows.Forms.TabPage tabPageBitCoin;
+    private System.Windows.Forms.Button buttonCoinListUpdate;
+    private System.Windows.Forms.Button buttonCoinListAdd;
+    private System.Windows.Forms.TextBox textBoxCoinListSymbol;
+    private System.Windows.Forms.Label labelCoinListSymbol;
+    private System.Windows.Forms.TextBox textBoxCoinListName;
+    private System.Windows.Forms.Label labelCoinListName;
   }
 }

@@ -53,6 +53,107 @@ namespace MyBitcoinWallet
       GetWindowValue();
       LoadLanguages();
       SetLanguage(Settings.Default.LastLanguageUsed);
+      // load coins list
+      LoadCoinList();
+    }
+
+    private void LoadCoinList()
+    {
+      listViewCoinList.Items.Clear();
+      listViewCoinList.Columns.Clear();
+      listViewCoinList.Columns.Add("Select", 50, HorizontalAlignment.Left);
+      listViewCoinList.Columns.Add("Symbol", 50, HorizontalAlignment.Left);
+      listViewCoinList.Columns.Add("Name", 640, HorizontalAlignment.Left);
+
+      listViewCoinList.View = View.Details;
+      listViewCoinList.LabelEdit = false;
+      listViewCoinList.AllowColumnReorder = true;
+      listViewCoinList.CheckBoxes = true;
+      listViewCoinList.FullRowSelect = true;
+      listViewCoinList.GridLines = true;
+      listViewCoinList.Sorting = SortOrder.None;
+
+      XDocument xmlDoc;
+      try
+      {
+        xmlDoc = XDocument.Load(Settings.Default.CoinListXmlFileName);
+      }
+      catch (Exception exception)
+      {
+        MessageBox.Show("Error while loading the " + Settings.Default.CoinListXmlFileName +
+                        " xml file: " + exception.Message);
+        CreateCoinListFile();
+        return;
+      }
+
+      var result = from node in xmlDoc.Descendants("Coin")
+                   where node.HasElements
+                   let xElementName = node.Element("name")
+                   where xElementName != null
+                   let xElementSymbol = node.Element("symbol")
+                   where xElementSymbol != null
+                   select new
+                   {
+                     coinName = xElementName.Value,
+                     coinSymbol = xElementSymbol.Value
+                   };
+
+      foreach (var q in result)
+      {
+        string tmpCoinSymbol = q.coinSymbol;
+        string tmpCoinName = q.coinName;
+        ListViewItem item1 = new ListViewItem("") { Checked = false };
+        item1.SubItems.Add(tmpCoinSymbol);
+        item1.SubItems.Add(tmpCoinName);
+
+        if (!IsInlistView(listViewCoinList, item1, 2))
+        {
+          listViewCoinList.Items.Add(item1);
+          Application.DoEvents();
+        }
+      }
+
+    }
+
+    private static void CreateCoinListFile()
+    {
+      var minimumVersion = new List<string>
+      {
+        "<?xml version=\"1.0\" encoding=\"utf-8\" ?>",
+        "<Coins>",
+        "<Coin>",
+        " <name>Bitcoin</name>",
+        "<symbol>XBT</symbol>",
+        "</Coin>",
+        "<Coin>",
+        "<name>Bitcoin Cash</name>",
+        "<symbol>BCH</symbol>",
+        "</Coin>",
+        "</Coins>"
+      };
+
+      StreamWriter sw = new StreamWriter(Settings.Default.CoinListXmlFileName);
+      foreach (string item in minimumVersion)
+      {
+        sw.WriteLine(item);
+      }
+
+      sw.Close();
+    }
+
+    private static bool IsInlistView(ListView listView, ListViewItem lviItem, int columnNumber)
+    {
+      bool result = false;
+      foreach (ListViewItem item in listView.Items)
+      {
+        if (item.SubItems[columnNumber].Text == lviItem.SubItems[columnNumber].Text)
+        {
+          result = true;
+          break;
+        }
+      }
+
+      return result;
     }
 
     private void LoadConfigurationOptions()
@@ -703,6 +804,27 @@ namespace MyBitcoinWallet
       if (e.KeyCode == Keys.Enter)
       {
         // do something
+      }
+    }
+
+    private void buttonCoinListAdd_Click(object sender, EventArgs e)
+    {
+      // Check if coin doesn't already exist, if it does, propose an update
+
+    }
+
+    private void buttonCoinListUpdate_Click(object sender, EventArgs e)
+    {
+      // Check if coin does already exist, if it doesn't, propose an addition
+
+    }
+
+    private void listViewCoinList_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if (listViewCoinList.SelectedItems.Count != 0)
+      {
+        textBoxCoinListName.Text = listViewCoinList.SelectedItems[0].SubItems[2].Text;
+        textBoxCoinListSymbol.Text = listViewCoinList.SelectedItems[0].SubItems[1].Text;
       }
     }
   }

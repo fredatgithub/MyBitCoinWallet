@@ -106,7 +106,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Coins.xml" />
+    <Content Include="Coins.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Translations.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
