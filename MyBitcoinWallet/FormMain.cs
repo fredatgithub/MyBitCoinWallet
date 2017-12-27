@@ -827,5 +827,17 @@ namespace MyBitcoinWallet
         textBoxCoinListSymbol.Text = listViewCoinList.SelectedItems[0].SubItems[1].Text;
       }
     }
+
+    private void textBoxCoinListName_TextChanged(object sender, EventArgs e)
+    {
+      buttonCoinListUpdate.Enabled = textBoxCoinListName.Text.Length != 0;
+      buttonCoinListAdd.Enabled = textBoxCoinListName.Text.Length != 0;
+    }
+
+    private void textBoxCoinListSymbol_TextChanged(object sender, EventArgs e)
+    {
+      buttonCoinListUpdate.Enabled = textBoxCoinListName.Text.Length != 0;
+      buttonCoinListAdd.Enabled = textBoxCoinListName.Text.Length != 0;
+    }
   }
 }

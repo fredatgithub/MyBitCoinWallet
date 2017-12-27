@@ -432,6 +432,7 @@
       this.textBoxCoinListSymbol.Name = "textBoxCoinListSymbol";
       this.textBoxCoinListSymbol.Size = new System.Drawing.Size(100, 20);
       this.textBoxCoinListSymbol.TabIndex = 4;
+      this.textBoxCoinListSymbol.TextChanged += new System.EventHandler(this.textBoxCoinListSymbol_TextChanged);
       // 
       // labelCoinListSymbol
       // 
@@ -448,6 +449,7 @@
       this.textBoxCoinListName.Name = "textBoxCoinListName";
       this.textBoxCoinListName.Size = new System.Drawing.Size(100, 20);
       this.textBoxCoinListName.TabIndex = 2;
+      this.textBoxCoinListName.TextChanged += new System.EventHandler(this.textBoxCoinListName_TextChanged);
       // 
       // labelCoinListName
       // 
