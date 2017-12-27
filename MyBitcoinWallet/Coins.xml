@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Coins>
+  <Coin>
+    <name>Bitcoin</name>
+    <symbol>XBT</symbol>
+  </Coin>
+  <Coin>
+    <name>Bitcoin Cash</name>
+    <symbol>BCH</symbol>
+  </Coin>
+  <Coin>
+    <name>Bitcoin Lite</name>
+    <symbol></symbol>
+  </Coin>
+  <Coin>
+    <name>Bitcoin Gold</name>
+    <symbol></symbol>
+  </Coin>
+  <Coin>
+    <name>Bitconnect</name>
+    <symbol></symbol>
+  </Coin>
+  <Coin>
+    <name>Ethereum</name>
+    <symbol>ETH</symbol>
+  </Coin>
+  <Coin>
+    <name>Ethereum Classic</name>
+    <symbol></symbol>
+  </Coin>
+  <Coin>
+    <name>ZCash</name>
+    <symbol></symbol>
+  </Coin>
+  <Coin>
+    <name>Monero</name>
+    <symbol></symbol>
+  </Coin>
+  <Coin>
+    <name>EOS</name>
+    <symbol>EOS</symbol>
+  </Coin>
+  <Coin>
+    <name>Cardano</name>
+    <symbol>ADA</symbol>
+  </Coin>
+  <Coin>
+    <name>Verge</name>
+    <symbol>XVG</symbol>
+  </Coin>
+  <Coin>
+    <name>Tron</name>
+    <symbol>TRX</symbol>
+  </Coin>
+  <Coin>
+    <name>Request Network</name>
+    <symbol>REQ</symbol>
+  </Coin>
+  <Coin>
+    <name>GameCredits</name>
+    <symbol>GAME</symbol>
+  </Coin>
+  <Coin>
+    <name>Stellar Lumens</name>
+    <symbol>XLS</symbol>
+  </Coin>
+  <Coin>
+    <name>IOTA</name>
+    <symbol>MIOTA</symbol>
+  </Coin>
+  <Coin>
+    <name>Ripple</name>
+    <symbol>XRP</symbol>
+  </Coin>
+  <Coin>
+    <name>NEO</name>
+    <symbol></symbol>
+  </Coin>
+  <Coin>
+    <name>Dash</name>
+    <symbol></symbol>
+  </Coin>
+</Coins>
