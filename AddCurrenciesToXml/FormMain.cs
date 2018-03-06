@@ -724,5 +724,55 @@ namespace AddCurrenciesToXml
         // do something
       }
     }
+
+    private void buttonCreateXmlFile_Click(object sender, EventArgs e)
+    {
+      textBoxTarget.Text = string.Empty;
+      string finalResult = string.Empty;
+      var listOfLines = textBoxSource.Text.Split('\n');
+      /*
+       <Coin>
+        <name>Bitcoin</name>
+        <symbol>BTC</symbol>
+       </Coin>
+       * */
+      string header = CreateHeader();
+      string footer = CreateFooter();
+      for (int i = 0; i < listOfLines.Length; i++)
+      {
+        string currentLine = listOfLines[i].Trim().TrimEnd(')');
+        if (currentLine != string.Empty)
+        {
+          finalResult += header;
+          finalResult += $"<name>{ExtractString(currentLine)[0].Trim()}</name>";
+          finalResult += Environment.NewLine;
+          finalResult += $"<symbol>{ExtractString(currentLine)[1].Trim()}</symbol>";
+          finalResult += footer;
+        }
+      }
+
+      textBoxTarget.Text = finalResult;
+    }
+
+    private string[] ExtractString(string currentLine)
+    {
+      string[] result = currentLine.Split('(');
+      return result;
+    }
+
+    private string CreateFooter()
+    {
+      string result = Environment.NewLine;
+      result += "</Coin>";
+      result += Environment.NewLine;
+      return result;
+    }
+
+    private string CreateHeader()
+    {
+      string result = "<Coin>";
+      result += Environment.NewLine;
+      return result;
+    }
   }
 }

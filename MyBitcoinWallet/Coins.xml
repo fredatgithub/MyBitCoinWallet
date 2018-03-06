@@ -84,4 +84,48 @@
     <name>Dash</name>
     <symbol>DASH</symbol>
   </Coin>
+  <Coin>
+    <name>Stellar</name>
+    <symbol>XLM</symbol>
+  </Coin>
+  <Coin>
+    <name>EOS</name>
+    <symbol>EOS</symbol>
+  </Coin>
+  <Coin>
+    <name>TRON</name>
+    <symbol>TRX</symbol>
+  </Coin>
+  <Coin>
+    <name>Tether</name>
+    <symbol>USDT</symbol>
+  </Coin>
+  <Coin>
+    <name>VeChain</name>
+    <symbol>VEN</symbol>
+  </Coin>
+  <Coin>
+    <name>Qtum</name>
+    <symbol>QTUM</symbol>
+  </Coin>
+  <Coin>
+    <name>OmiseGO</name>
+    <symbol>OMG</symbol>
+  </Coin>
+  <Coin>
+    <name>ICON</name>
+    <symbol>ICX</symbol>
+  </Coin>
+  <Coin>
+    <name>Binance Coin</name>
+    <symbol>BNB</symbol>
+  </Coin>
+  <Coin>
+    <name>DigixDAO</name>
+    <symbol>DGD</symbol>
+  </Coin>
+  <Coin>
+    <name>Populous</name>
+    <symbol>PPT</symbol>
+  </Coin>
 </Coins>
