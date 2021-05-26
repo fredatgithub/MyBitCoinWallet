@@ -33,6 +33,7 @@ namespace MyBitcoinWallet
         CreateLanguageFile();
         return;
       }
+
       var result = from node in xDoc.Descendants("term")
                    where node.HasElements
                    let xElementName = node.Element("name")
@@ -216,6 +217,5 @@ namespace MyBitcoinWallet
 
       sw.Close();
     }
-
   }
 }

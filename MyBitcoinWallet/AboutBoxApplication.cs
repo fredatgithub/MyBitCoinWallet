@@ -10,9 +10,9 @@ namespace MyBitcoinWallet
     public AboutBoxApplication()
     {
       InitializeComponent();
-      Text = String.Format("À propos de {0}", AssemblyTitle);
+      Text = $"À propos de {AssemblyTitle}";
       labelProductName.Text = AssemblyProduct;
-      labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+      labelVersion.Text = $"Version {AssemblyVersion}";
       labelCopyright.Text = AssemblyCopyright;
       labelCompanyName.Text = AssemblyCompany;
       textBoxDescription.Text = AssemblyDescription;
@@ -28,7 +28,7 @@ namespace MyBitcoinWallet
         if (attributes.Length > 0)
         {
           AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
-          if (titleAttribute.Title != "")
+          if (titleAttribute.Title != string.Empty)
           {
             return titleAttribute.Title;
           }
@@ -52,8 +52,9 @@ namespace MyBitcoinWallet
         object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
         if (attributes.Length == 0)
         {
-          return "";
+          return string.Empty;
         }
+
         return ((AssemblyDescriptionAttribute)attributes[0]).Description;
       }
     }
@@ -65,8 +66,9 @@ namespace MyBitcoinWallet
         object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
         if (attributes.Length == 0)
         {
-          return "";
+          return string.Empty;
         }
+
         return ((AssemblyProductAttribute)attributes[0]).Product;
       }
     }
@@ -78,7 +80,7 @@ namespace MyBitcoinWallet
         object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
         if (attributes.Length == 0)
         {
-          return "";
+          return string.Empty;
         }
         return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
       }
@@ -91,14 +93,14 @@ namespace MyBitcoinWallet
         object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
         if (attributes.Length == 0)
         {
-          return "";
+          return string.Empty;
         }
         return ((AssemblyCompanyAttribute)attributes[0]).Company;
       }
     }
     #endregion
 
-    private void okButton_Click(object sender, EventArgs e)
+    private void OkButton_Click(object sender, EventArgs e)
     {
       Close();
     }

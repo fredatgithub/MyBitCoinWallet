@@ -112,7 +112,6 @@ namespace MyBitcoinWallet
           Application.DoEvents();
         }
       }
-
     }
 
     private static void CreateCoinListFile()
@@ -446,14 +445,14 @@ namespace MyBitcoinWallet
       SaveWindowValue();
     }
 
-    private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
+    private void FrenchToolStripMenuItem_Click(object sender, EventArgs e)
     {
       _currentLanguage = Language.French.ToString();
       SetLanguage(Language.French.ToString());
       AdjustAllControls();
     }
 
-    private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+    private void EnglishToolStripMenuItem_Click(object sender, EventArgs e)
     {
       _currentLanguage = Language.English.ToString();
       SetLanguage(Language.English.ToString());
@@ -543,7 +542,7 @@ namespace MyBitcoinWallet
       }
     }
 
-    private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+    private void CutToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
       var tb = focusedControl as TextBox;
@@ -553,7 +552,7 @@ namespace MyBitcoinWallet
       }
     }
 
-    private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+    private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
       var tb = focusedControl as TextBox;
@@ -563,7 +562,7 @@ namespace MyBitcoinWallet
       }
     }
 
-    private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+    private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
       var tb = focusedControl as TextBox;
@@ -573,7 +572,7 @@ namespace MyBitcoinWallet
       }
     }
 
-    private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+    private void SelectAllToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
       TextBox control = focusedControl as TextBox;
@@ -683,10 +682,10 @@ namespace MyBitcoinWallet
     private static string PeekDirectory()
     {
       string result = string.Empty;
-      FolderBrowserDialog fbd = new FolderBrowserDialog();
-      if (fbd.ShowDialog() == DialogResult.OK)
+      FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+      if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
       {
-        result = fbd.SelectedPath;
+        result = folderBrowserDialog.SelectedPath;
       }
 
       return result;
@@ -753,7 +752,7 @@ namespace MyBitcoinWallet
       AdjustControls(); // insert here all labels, textboxes and buttons, one method per line of controls
     }
 
-    private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+    private void OptionsToolStripMenuItem_Click(object sender, EventArgs e)
     {
       FormOptions frmOptions = new FormOptions(_configurationOptions);
 
@@ -799,7 +798,7 @@ namespace MyBitcoinWallet
       button.Enabled = result;
     }
 
-    private void textBoxName_KeyDown(object sender, KeyEventArgs e)
+    private void TextBoxName_KeyDown(object sender, KeyEventArgs e)
     {
       if (e.KeyCode == Keys.Enter)
       {
@@ -807,19 +806,19 @@ namespace MyBitcoinWallet
       }
     }
 
-    private void buttonCoinListAdd_Click(object sender, EventArgs e)
+    private void ButtonCoinListAdd_Click(object sender, EventArgs e)
     {
       // Check if coin doesn't already exist, if it does, propose an update
 
     }
 
-    private void buttonCoinListUpdate_Click(object sender, EventArgs e)
+    private void ButtonCoinListUpdate_Click(object sender, EventArgs e)
     {
       // Check if coin does already exist, if it doesn't, propose an addition
 
     }
 
-    private void listViewCoinList_SelectedIndexChanged(object sender, EventArgs e)
+    private void ListViewCoinList_SelectedIndexChanged(object sender, EventArgs e)
     {
       if (listViewCoinList.SelectedItems.Count != 0)
       {
@@ -828,13 +827,13 @@ namespace MyBitcoinWallet
       }
     }
 
-    private void textBoxCoinListName_TextChanged(object sender, EventArgs e)
+    private void TextBoxCoinListName_TextChanged(object sender, EventArgs e)
     {
       buttonCoinListUpdate.Enabled = textBoxCoinListName.Text.Length != 0;
       buttonCoinListAdd.Enabled = textBoxCoinListName.Text.Length != 0;
     }
 
-    private void textBoxCoinListSymbol_TextChanged(object sender, EventArgs e)
+    private void TextBoxCoinListSymbol_TextChanged(object sender, EventArgs e)
     {
       buttonCoinListUpdate.Enabled = textBoxCoinListName.Text.Length != 0;
       buttonCoinListAdd.Enabled = textBoxCoinListName.Text.Length != 0;

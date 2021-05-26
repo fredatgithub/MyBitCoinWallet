@@ -36,7 +36,7 @@ namespace MyBitcoinWallet
       Close();
     }
 
-    private void buttonOptionsCancel_Click(object sender, EventArgs e)
+    private void ButtonOptionsCancel_Click(object sender, EventArgs e)
     {
       Close();
     }

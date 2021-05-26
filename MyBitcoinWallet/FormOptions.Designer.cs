@@ -79,7 +79,7 @@ namespace MyBitcoinWallet
       this.buttonOptionsCancel.TabIndex = 3;
       this.buttonOptionsCancel.Text = "Cancel";
       this.buttonOptionsCancel.UseVisualStyleBackColor = true;
-      this.buttonOptionsCancel.Click += new System.EventHandler(this.buttonOptionsCancel_Click);
+      this.buttonOptionsCancel.Click += new System.EventHandler(this.ButtonOptionsCancel_Click);
       // 
       // FormOptions
       // 
